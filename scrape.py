@@ -1,6 +1,6 @@
 import requests
 import pandas as pd
-from datetime import *
+from datetime import date
 
 def get_data(url, headers, params):
       req = requests.get(url, headers=headers, params=params)
