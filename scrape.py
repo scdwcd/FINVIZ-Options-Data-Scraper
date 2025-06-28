@@ -30,9 +30,9 @@ def scrape(ticker_list, expiry_list):
                         for ticker_exp in ticker_expiries:
                               exp = date.fromisoformat(ticker_exp)
                               if start <= exp and exp <= end:
-                                    data.append(get_data(url, headers, {"expiry" : str(exp)}))
+                                    data.append(get_data(url, headers, {"expiry" : ticker_exp}))
                 elif expiry in ticker_expiries:  # Single dates
-                      data.append(get_data(url, headers, {"expiry" : str(expiry)}))
+                      data.append(get_data(url, headers, {"expiry" : expiry}))
                 else:
                       print("No " + ticker + " options expire on " + expiry + ".")
     dataframe = pd.DataFrame(data=data).transpose()
